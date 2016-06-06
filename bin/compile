@@ -104,3 +104,5 @@ export PKG_CONFIG_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/pkgconfig:$BUIL
 export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPPATH|PKG_CONFIG_PATH)='  > "$LP_DIR/export"
 
 ln -sf /app/.apt/usr/share/texlive /usr/share/texlive
+
+export PATH=$HOME/.texlive/bin/x86_64-linux:$PATH
