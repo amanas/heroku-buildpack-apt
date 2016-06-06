@@ -65,6 +65,14 @@ for PACKAGE in $(cat $BUILD_DIR/Aptfile); do
   fi
 done
 
+topic "amanas"
+apt-get $APT_OPTIONS -y --force-yes -d install --reinstall --no-install-recommends python-pip | indent
+apt-get $APT_OPTIONS -y --force-yes -d install --reinstall --no-install-recommends pandoc | indent
+apt-get $APT_OPTIONS -y --force-yes -d install --reinstall --no-install-recommends texlive-base | indent
+apt-get $APT_OPTIONS -y --force-yes -d install --reinstall texlive-xetex | indent
+ 
+
+
 mkdir -p $BUILD_DIR/.apt
 
 for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
